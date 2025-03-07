@@ -127,7 +127,7 @@ export function getFormattedPatchVersion(patchVersion: string) {
 }
 
 console.log('Testing getEventDetailsResponse...');
-getEventDetailsResponse("113476054450558883")
+getEventDetailsResponse("113476054450558859")
     .then(response => {
         const test = response.data.data; // Access the nested data
 

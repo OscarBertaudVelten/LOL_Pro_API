@@ -3,11 +3,13 @@ const headers = {
     "Accept": "application/json",
     "x-api-key": "0TvQnueqKa5mxJntVWt0w4LpLfEkrV1Ta8rQBb9Z"
 };
+const urlPast = "https://lolesports.com/api/gql?operationName=homeEvents&variables=%7B%22hl%22%3A%22fr-FR%22%2C%22sport%22%3A%22lol%22%2C%22eventState%22%3A%5B%22completed%22%5D%2C%22eventType%22%3A%22match%22%2C%22pageSize%22%3A40%2C%22pageToken%22%3A%22b2xkZXI6OjExMzQ3NjA1NDQ1MDU1ODg3Nw%3D%3D%22%7D&extensions=%7B%22persistedQuery%22%3A%7B%22version%22%3A1%2C%22sha256Hash%22%3A%22089916a64423fe9796f6e81b30e9bda7e329366a5b06029748c610a8e486d23f%22%7D%7D"
+
 
 let allEvents = [];  // Store all events for filtering
 
 async function fetchSchedule() {
-    try {
+    try {   
         const response = await fetch(url, { method: "GET", headers });
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 

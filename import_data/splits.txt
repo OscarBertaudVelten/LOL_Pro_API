@@ -1,0 +1,5 @@
+Worlds: split_year -> 2025
+MSI: split_year -> 2025
+First Stand: split_year -> 2025
+LCK: split_year, split_name, split_format -> 2025, spring, playoffs
+LPL: 
