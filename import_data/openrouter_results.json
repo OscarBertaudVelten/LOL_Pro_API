@@ -1,0 +1,50 @@
+{
+    "first_stand": {
+        "error": "Max retries reached"
+    },
+    "lck_challengers_league": {
+        "error": "Max retries reached"
+    },
+    "lck": {
+        "error": "Max retries reached"
+    },
+    "lcs": {
+        "error": "Max retries reached"
+    },
+    "lec": {
+        "error": "Max retries reached"
+    },
+    "lfl": {
+        "error": "Max retries reached"
+    },
+    "ljl-japan": {
+        "error": "Max retries reached"
+    },
+    "lla": {
+        "error": "Max retries reached"
+    },
+    "lpl": {
+        "error": "Max retries reached"
+    },
+    "lta_cross": {
+        "error": "Max retries reached"
+    },
+    "lta_n": {
+        "error": "Max retries reached"
+    },
+    "lta_s": {
+        "error": "Max retries reached"
+    },
+    "msi": {
+        "error": "Max retries reached"
+    },
+    "pcs": {
+        "error": "Max retries reached"
+    },
+    "vcs": {
+        "error": "Max retries reached"
+    },
+    "worlds": {
+        "error": "Max retries reached"
+    }
+}

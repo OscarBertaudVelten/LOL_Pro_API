@@ -1,0 +1,37 @@
+leagues = {
+    'first_stand': 'https://lol.fandom.com/wiki/First_Stand',
+    'lck_challengers_league': 'https://lol.fandom.com/wiki/LCK_Challengers_League#Main_Events',
+    'lck': 'https://lol.fandom.com/wiki/League_of_Legends_Champions_Korea#Main_Events',
+    'lcs': 'https://lol.fandom.com/wiki/League_Championship_Series#Main_Events',
+    'lec': 'https://lol.fandom.com/wiki/LoL_EMEA_Championship#Main_Events',
+    'lfl': 'https://lol.fandom.com/wiki/Ligue_Française_de_League_of_Legends#Main_Events',
+    'ljl-japan': 'https://lol.fandom.com/wiki/League_of_Legends_Japan_League#Main_Events',
+    'lla': 'https://lol.fandom.com/wiki/Liga_Latinoamérica#Main_Events',
+    'lpl': 'https://lol.fandom.com/wiki/LoL_Pro_League#Main_Events',
+    'lta_cross': 'https://lol.fandom.com/wiki/League_of_Legends_Championship_of_The_Americas#Main_Events',
+    'lta_n': 'https://lol.fandom.com/wiki/LTA_North#Main_Events',
+    'lta_s': 'https://lol.fandom.com/wiki/LTA_South#Main_Events',
+    'msi': 'https://lol.fandom.com/wiki/Mid-Season_Invitational',
+    'pcs': 'https://lol.fandom.com/wiki/Pacific_Championship_Series#Main_Events',
+    'vcs': 'https://lol.fandom.com/wiki/Vietnam_Championship_Series#Main_Events',
+    'worlds': 'https://lol.fandom.com/wiki/World_Championship'
+}
+
+leagues_table = [
+    'https://lol.fandom.com/wiki/First_Stand',
+    'https://lol.fandom.com/wiki/LCK_Challengers_League#Main_Events',
+    'https://lol.fandom.com/wiki/League_of_Legends_Champions_Korea#Main_Events',
+    'https://lol.fandom.com/wiki/League_Championship_Series#Main_Events',
+    'https://lol.fandom.com/wiki/LoL_EMEA_Championship#Main_Events',
+    'https://lol.fandom.com/wiki/Ligue_Française_de_League_of_Legends#Main_Events',
+    'https://lol.fandom.com/wiki/League_of_Legends_Japan_League#Main_Events',
+    'https://lol.fandom.com/wiki/Liga_Latinoamérica#Main_Events',
+    'https://lol.fandom.com/wiki/LoL_Pro_League#Main_Events',
+    'https://lol.fandom.com/wiki/League_of_Legends_Championship_of_The_Americas#Main_Events',
+    'https://lol.fandom.com/wiki/LTA_North#Main_Events',
+    'https://lol.fandom.com/wiki/LTA_South#Main_Events',
+    'https://lol.fandom.com/wiki/Mid-Season_Invitational',
+    'https://lol.fandom.com/wiki/Pacific_Championship_Series#Main_Events',
+    'https://lol.fandom.com/wiki/Vietnam_Championship_Series#Main_Events',
+    'https://lol.fandom.com/wiki/World_Championship'
+]
