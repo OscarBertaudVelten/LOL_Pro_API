@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="06fb35e1-8603-4502-b360-285d6c6b2193" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LOL_Pro_API/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/LOL_Pro_API/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOL_Pro_API/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOL_Pro_API/players_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/LOL_Pro_API/players_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOL_Pro_API/teams_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/LOL_Pro_API/teams_api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +63,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\All\Projects\Lol-Esports-App" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -85,7 +91,7 @@
       <workItem from="1741788644999" duration="8227000" />
       <workItem from="1741797832254" duration="1029000" />
       <workItem from="1741956093203" duration="1200000" />
-      <workItem from="1741957386824" duration="6247000" />
+      <workItem from="1741957386824" duration="6986000" />
     </task>
     <servers />
   </component>
@@ -96,7 +102,7 @@
     <SUITE FILE_PATH="coverage/Lol_Esports_App$contracts_api.coverage" NAME="contracts_api Coverage Results" MODIFIED="1741795426422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Leaguepedia_API" />
     <SUITE FILE_PATH="coverage/Lol_Esports_App$leagues_api.coverage" NAME="leagues_api Coverage Results" MODIFIED="1741789890011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Leaguepedia_API" />
     <SUITE FILE_PATH="coverage/Lol_Esports_App$global_contract_db_api.coverage" NAME="global_contract_db_api Coverage Results" MODIFIED="1741795599562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Leaguepedia_API" />
-    <SUITE FILE_PATH="coverage/Lol_Esports_App$app.coverage" NAME="app Coverage Results" MODIFIED="1741965269096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LOL_Pro_API" />
+    <SUITE FILE_PATH="coverage/Lol_Esports_App$app.coverage" NAME="app Coverage Results" MODIFIED="1741966168384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Lol_Esports_App$entities_api.coverage" NAME="entities_api Coverage Results" MODIFIED="1741795342725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Leaguepedia_API" />
     <SUITE FILE_PATH="coverage/Lol_Esports_App$tournaments_api.coverage" NAME="tournaments_api Coverage Results" MODIFIED="1741794072465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Leaguepedia_API" />
     <SUITE FILE_PATH="coverage/Lol_Esports_App$teams_api.coverage" NAME="teams_api Coverage Results" MODIFIED="1741963382092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LOL_Pro_API" />

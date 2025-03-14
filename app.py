@@ -1,5 +1,5 @@
 from flask import Flask, request
-import players_api
+from LOL_Pro_API import players_api
 
 app = Flask(__name__)
 
@@ -12,4 +12,4 @@ def get_player_info():
 def helloworld():
     return 'hello world'
 
-app.run("https://lol-pro-api-hnfpfecxbgddf6eg.francecentral-01.azurewebsites.net", 3030)
+app.run("localhost", 3030)

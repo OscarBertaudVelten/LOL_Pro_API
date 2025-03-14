@@ -1,6 +1,6 @@
 from mwrogue.esports_client import EsportsClient
 import json
-from api_tools import get_attribute_value
+from LOL_Pro_API.api_tools import get_attribute_value
 
 site = EsportsClient("lol")
 
