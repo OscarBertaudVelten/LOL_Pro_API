@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06fb35e1-8603-4502-b360-285d6c6b2193" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LOL_Pro_API/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/LOL_Pro_API/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LOL_Pro_API/players_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/LOL_Pro_API/players_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LOL_Pro_API/teams_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/LOL_Pro_API/teams_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +83,7 @@
       <workItem from="1741788644999" duration="8227000" />
       <workItem from="1741797832254" duration="1029000" />
       <workItem from="1741956093203" duration="1200000" />
-      <workItem from="1741957386824" duration="4872000" />
+      <workItem from="1741957386824" duration="4992000" />
     </task>
     <servers />
   </component>
