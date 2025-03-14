@@ -108,4 +108,4 @@ class Entity:
                 f"Disambiguation: {self.DisambigSentence}")
 
 
-print(Entity("Karmine"))
+# print(Entity("Karmine"))

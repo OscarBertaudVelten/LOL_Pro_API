@@ -74,4 +74,4 @@ class League:
                 f"Official: {self.IsOfficial}")
 
 # Example usage:
-print(League("LEC"))
+# print(League("LEC"))

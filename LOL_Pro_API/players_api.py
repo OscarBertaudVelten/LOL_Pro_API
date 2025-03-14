@@ -225,4 +225,4 @@ class Player:
                 f"Social Media: {json.dumps(self.Socials, indent=2)}")
 
 # Example usage:
-print(Player("Perkz"))
+# print(Player("Perkz"))

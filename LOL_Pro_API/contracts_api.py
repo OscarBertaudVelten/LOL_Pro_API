@@ -104,5 +104,5 @@ class Contracts:
 
 
 
-print(Contracts("Perkz"))
+# print(Contracts("Perkz"))
 

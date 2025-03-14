@@ -11,4 +11,4 @@ def getCargoFields():
 
     return "\n".join(f"{entry['Name']}, {entry['CargoTable']}" for entry in response)
 
-print(getCargoFields())
+# print(getCargoFields())

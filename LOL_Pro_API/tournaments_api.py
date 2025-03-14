@@ -166,5 +166,5 @@ class Tournament:
                 f"Icon Key: {self.LeagueIconKey}")
 
 # Example usage:
-print(Tournament("Asia Masters 2025 Swiss 1"))
+# print(Tournament("Asia Masters 2025 Swiss 1"))
 

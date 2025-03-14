@@ -5,43 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06fb35e1-8603-4502-b360-285d6c6b2193" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Leaguepedia_API/api_tools.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leaguepedia_API/champions_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leaguepedia_API/contracts_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leaguepedia_API/entities_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leaguepedia_API/leagues_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leaguepedia_API/players_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leaguepedia_API/teams_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leaguepedia_API/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leaguepedia_API/tournaments_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Lol-Esports-App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Lol-Esports-App.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_data/import_splits.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_data/import_splits.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_data/match_dates/match_dates_nacl.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_data/match_dates/match_dates_nlc.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_data/match_dates/match_dates_north_regional_league.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_data/match_dates/match_dates_pcs.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_data/match_dates/match_dates_primeleague.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_data/match_dates/match_dates_rift_legends.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_data/match_dates/match_dates_roadoflegends.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_data/match_dates/match_dates_south_regional_league.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_data/match_dates/match_dates_superliga.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_data/match_dates/match_dates_turkiye-sampiyonluk-ligi.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_data/match_dates/match_dates_vcs.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_data/match_dates/match_dates_worlds.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_data/splits.txt" beforeDir="false" afterPath="$PROJECT_DIR$/import_data/splits.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_data/splits/splits_dates_first_stand.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_data/splits/splits_dates_msi.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_data/splits/splits_worlds.txt" beforeDir="false" afterPath="$PROJECT_DIR$/import_data/splits/splits_worlds.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_data/tempCodeRunnerFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_data/tempCodeRunnerFile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_data/temp_match_dates/match_dates_lck.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_data/temp_match_dates/match_dates_lec.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_data/temp_match_dates/match_dates_lpl.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_data/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/import_data/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOL_Pro_API/cargo_fields.py" beforeDir="false" afterPath="$PROJECT_DIR$/LOL_Pro_API/cargo_fields.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOL_Pro_API/champions_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/LOL_Pro_API/champions_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOL_Pro_API/contracts_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/LOL_Pro_API/contracts_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOL_Pro_API/entities_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/LOL_Pro_API/entities_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOL_Pro_API/leaguepedia_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/LOL_Pro_API/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOL_Pro_API/leagues_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/LOL_Pro_API/leagues_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOL_Pro_API/players_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/LOL_Pro_API/players_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOL_Pro_API/teams_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/LOL_Pro_API/teams_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOL_Pro_API/tournaments_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/LOL_Pro_API/tournaments_api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,31 +43,32 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.champions_api.executor&quot;: &quot;Run&quot;,
-    &quot;Python.contracts_api.executor&quot;: &quot;Run&quot;,
-    &quot;Python.entities_api.executor&quot;: &quot;Run&quot;,
-    &quot;Python.global_contract_db_api.executor&quot;: &quot;Run&quot;,
-    &quot;Python.leagues_api.executor&quot;: &quot;Run&quot;,
-    &quot;Python.players_api.executor&quot;: &quot;Run&quot;,
-    &quot;Python.teams_api.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tournaments_api.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/All/Projects/Lol-Esports-App&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.app.executor": "Run",
+    "Python.champions_api.executor": "Run",
+    "Python.contracts_api.executor": "Run",
+    "Python.entities_api.executor": "Run",
+    "Python.global_contract_db_api.executor": "Run",
+    "Python.leagues_api.executor": "Run",
+    "Python.players_api.executor": "Run",
+    "Python.teams_api.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.tournaments_api.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/All/Projects/Lol-Esports-App",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -118,7 +92,7 @@
       <workItem from="1741788644999" duration="8227000" />
       <workItem from="1741797832254" duration="1029000" />
       <workItem from="1741956093203" duration="1200000" />
-      <workItem from="1741957386824" duration="1355000" />
+      <workItem from="1741957386824" duration="2082000" />
     </task>
     <servers />
   </component>
@@ -129,6 +103,7 @@
     <SUITE FILE_PATH="coverage/Lol_Esports_App$contracts_api.coverage" NAME="contracts_api Coverage Results" MODIFIED="1741795426422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Leaguepedia_API" />
     <SUITE FILE_PATH="coverage/Lol_Esports_App$leagues_api.coverage" NAME="leagues_api Coverage Results" MODIFIED="1741789890011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Leaguepedia_API" />
     <SUITE FILE_PATH="coverage/Lol_Esports_App$global_contract_db_api.coverage" NAME="global_contract_db_api Coverage Results" MODIFIED="1741795599562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Leaguepedia_API" />
+    <SUITE FILE_PATH="coverage/Lol_Esports_App$app.coverage" NAME="app Coverage Results" MODIFIED="1741959337598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LOL_Pro_API" />
     <SUITE FILE_PATH="coverage/Lol_Esports_App$entities_api.coverage" NAME="entities_api Coverage Results" MODIFIED="1741795342725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Leaguepedia_API" />
     <SUITE FILE_PATH="coverage/Lol_Esports_App$tournaments_api.coverage" NAME="tournaments_api Coverage Results" MODIFIED="1741794072465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Leaguepedia_API" />
     <SUITE FILE_PATH="coverage/Lol_Esports_App$teams_api.coverage" NAME="teams_api Coverage Results" MODIFIED="1741958243377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Leaguepedia_API" />
