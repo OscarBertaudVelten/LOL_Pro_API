@@ -8,4 +8,8 @@ def get_player_info():
     pseudo = request.args.get('name', '')
     return players_api.Player(pseudo).__str__()
 
-app.run("localhost", 3030)
+@app.route('/')
+def helloworld():
+    return 'hello world'
+
+app.run("https://lol-pro-api-hnfpfecxbgddf6eg.francecentral-01.azurewebsites.net", 3030)
