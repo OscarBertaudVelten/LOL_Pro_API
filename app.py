@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route('/player')
 def get_player_info():
     pseudo = request.args.get('name', '')
-    return json.dumps(players_api.Player(pseudo))
+    return json.dumps(players_api.Player(pseudo).to_dict())
 
 @app.route('/team')
 def get_team_info():

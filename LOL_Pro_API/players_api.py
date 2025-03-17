@@ -2,7 +2,7 @@ from mwrogue.esports_client import EsportsClient
 import json
 from LOL_Pro_API.api_tools import get_attribute_value
 import html
-from LOL_Pro_API.teams_api import Team
+from LOL_Pro_API import teams_api
 
 
 site = EsportsClient("lol")
@@ -98,7 +98,7 @@ class Player:
     Birthdate: str
     Deathdate: str
     ResidencyFormer: str
-    Team: Team
+    Team: teams_api.Team
     Residency: str
     Role: str
     Contract: str
@@ -168,7 +168,7 @@ class Player:
             # Initialisation de l'équipe avec gestion d'erreur
             team_name = player_data.get('Team', "")
             try:
-                self.Team = Team(team_name) if team_name else None
+                self.Team = teams_api.Team(team_name) if team_name else None
             except Exception as e:
                 print(f"Warning: Failed to initialize Team for player '{self.Player}'. Error: {e}")
                 self.Team = "None"  # Assign None if an error occurs
@@ -206,6 +206,37 @@ class Player:
                 f"Favorite Champions: {self.FavChamps}\n"
                 f"Soloqueue IDs: {self.SoloqueueIds}\n"
                 f"Social Media: {json.dumps(self.Socials, indent=2)}")
+    
+
+    def to_dict(self):
+        return {
+            "ID": self.ID,
+            "OverviewPage": self.OverviewPage,
+            "Player": self.Player,
+            "Name": self.Name,
+            "NameFull": self.NameFull,
+            "Country": self.Country,
+            "Nationality": self.Nationality,
+            "NationalityPrimary": self.NationalityPrimary,
+            "Age": self.Age,
+            "Birthdate": self.Birthdate,
+            "Deathdate": self.Deathdate,
+            "ResidencyFormer": self.ResidencyFormer,
+            "Team": str(self.Team) if self.Team else None,
+            "Residency": self.Residency,
+            "Role": self.Role,
+            "Contract": self.Contract,
+            "FavChamps": self.FavChamps,
+            "SoloqueueIds": self.SoloqueueIds,
+            "RoleLast": self.RoleLast,
+            "IsRetired": self.IsRetired,
+            "IsSubstitute": self.IsSubstitute,
+            "IsLowercase": self.IsLowercase,
+            "IsAutoTeam": self.IsAutoTeam,
+            "IsLowContent": self.IsLowContent,
+            "Socials": self.Socials,
+        }
+
 
 # Example usage:
 # print(Player("Melon (Alexis Barrachin)"))
