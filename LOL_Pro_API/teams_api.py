@@ -73,6 +73,8 @@ class Team:
             where=f"T.Name = '{team_name}'"
         )
 
+
+
         # Check if we got any data for the team
         if response and len(response) > 0:
             # Get the team data
@@ -127,6 +129,24 @@ class Team:
             f"Socials: {json.dumps(self.Socials, indent=2)}"
         )
 
+    def to_dict(self):
+        return {
+            "Name": self.Name,
+            "Short": self.Short,
+            "OverviewPage": self.OverviewPage,
+            "Location": self.Location,
+            "TeamLocation": self.TeamLocation,
+            "Region": self.Region,
+            "OrganizationPage": self.OrganizationPage,
+            "Image": self.Image,
+            "Website": self.Website,
+            "RosterPhoto": self.RosterPhoto,
+            "IsDisbanded": self.IsDisbanded,
+            "RenamedTo": self.RenamedTo,
+            "IsLowercase": self.IsLowercase,
+            "Socials": self.Socials  # Socials field is included as a dictionary
+        }
+
 
 # Example usage:
-#print(Team("Karmine Corp Blue Stars"))
+#print(Team("Karmine Corp"))

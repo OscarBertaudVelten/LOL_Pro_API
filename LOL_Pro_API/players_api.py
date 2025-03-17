@@ -2,7 +2,7 @@ from mwrogue.esports_client import EsportsClient
 import json
 from LOL_Pro_API.api_tools import get_attribute_value
 import html
-from LOL_Pro_API import teams_api
+from LOL_Pro_API.teams_api import Team as TeamClass
 
 
 site = EsportsClient("lol")
@@ -98,7 +98,7 @@ class Player:
     Birthdate: str
     Deathdate: str
     ResidencyFormer: str
-    Team: teams_api.Team
+    Team: TeamClass
     Residency: str
     Role: str
     Contract: str
@@ -139,7 +139,6 @@ class Player:
                 'Birthdate': "",
                 'Deathdate': "",
                 'ResidencyFormer': "",
-                'Team': "",
                 'Residency': "",
                 'Role': "",
                 'Contract': "",
@@ -168,7 +167,7 @@ class Player:
             # Initialisation de l'équipe avec gestion d'erreur
             team_name = player_data.get('Team', "")
             try:
-                self.Team = teams_api.Team(team_name) if team_name else None
+                self.Team = TeamClass(team_name) if team_name else None
             except Exception as e:
                 print(f"Warning: Failed to initialize Team for player '{self.Player}'. Error: {e}")
                 self.Team = "None"  # Assign None if an error occurs
@@ -222,7 +221,7 @@ class Player:
             "Birthdate": self.Birthdate,
             "Deathdate": self.Deathdate,
             "ResidencyFormer": self.ResidencyFormer,
-            "Team": str(self.Team) if self.Team else None,
+            "Team": self.Team.to_dict() if self.Team else None,
             "Residency": self.Residency,
             "Role": self.Role,
             "Contract": self.Contract,
