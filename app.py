@@ -20,4 +20,8 @@ def get_team_info():
 def helloworld():
     return 'hello world'
 
+@app.route('/test')
+def test():
+    return "test"
+
 app.run("0.0.0.0", 3000)
