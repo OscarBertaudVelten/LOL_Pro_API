@@ -33,7 +33,7 @@ class Tournament:
         Rulebook (str): URL to the tournament's rulebook (e.g., 'https://...').
         EventType (str): Type of the event (e.g., 'Online', 'LAN').
         Split (str): Split of the tournament (e.g., 'Spring').
-        TournamentLevel (str): Level of the tournament (e.g., 'Premier').
+        TournamentLevel (str): Level of the tournament (e.g., 'Primary').
         IsQualifier (bool): Whether the tournament is a qualifier (True/False).
         IsPlayoffs (bool): Whether the tournament is playoffs (True/False).
         IsOfficial (bool): Whether the tournament is official (True/False).
@@ -165,6 +165,16 @@ class Tournament:
                 f"Year: {self.Year}\n"
                 f"Icon Key: {self.LeagueIconKey}")
 
+
+def getPrimaryTournaments():
+    response = site.cargo_client.query(
+        tables="Tournaments=T",
+        fields="T.Name",
+        where="T.TournamentLevel='Primary' AND T.Year >= 2024"
+    )
+    return [entry["Name"] for entry in response]
+
+print(getPrimaryTournaments())
 # Example usage:
 # print(Tournament("Asia Masters 2025 Swiss 1"))
 

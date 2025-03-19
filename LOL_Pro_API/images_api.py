@@ -1,9 +1,9 @@
 from mwrogue.esports_client import EsportsClient
 
+site = EsportsClient("lol")
 
-def get_player_image_url(player, width=None):
+def get_player_image_url(player):
     try:
-        site = EsportsClient("lol")
         response = site.cargo_client.query(
             limit=1,
             tables="PlayerImages=PI, Tournaments=T",
@@ -21,15 +21,28 @@ def get_player_image_url(player, width=None):
             titles=f"File:{filename}",
             prop="imageinfo",
             iiprop="url",
-            iiurlwidth=width,
+            iiurlwidth=None,
         )
 
         image_info = next(iter(response["query"]["pages"].values()))["imageinfo"][0]
 
-        if width:
-            url = image_info["thumburl"]
-        else:
-            url = image_info["url"]
-        return url
+        return image_info["url"]
     except Exception:
         return ''
+
+
+
+def get_team_image_url(team):
+    response = site.client.api(
+        action="query",
+        format="json",
+        titles=f"File:{team}logo square.png",
+        prop="imageinfo",
+        iiprop="url",
+        iiurlwidth=None,
+    )
+
+    image_info = next(iter(response["query"]["pages"].values()))["imageinfo"][0]
+
+    return image_info["url"]
+

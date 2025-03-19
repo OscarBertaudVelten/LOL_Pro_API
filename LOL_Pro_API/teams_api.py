@@ -1,6 +1,7 @@
 from mwrogue.esports_client import EsportsClient
 import json
 from LOL_Pro_API.api_tools import get_attribute_value
+from LOL_Pro_API import images_api
 
 site = EsportsClient("lol")
 
@@ -26,12 +27,12 @@ class Team:
         TeamLocation (str): Specific location of the team.
         Region (str): Competitive region the team belongs to.
         OrganizationPage (str): URL to the team's organization page.
-        Image (str): URL of the team logo.
         Website (str): Official website of the team.
         RosterPhoto (str): URL of the team roster photo.
         IsDisbanded (bool): Whether the team is disbanded.
         RenamedTo (str): New name of the team if renamed.
         IsLowercase (bool): Whether the team name is lowercase.
+        Image (str): URL of the team logo.
 
         Socials (dict): Dictionary containing the teams's social media handles.
     """
@@ -43,7 +44,6 @@ class Team:
     TeamLocation: str
     Region: str
     OrganizationPage: str
-    Image: str
     Twitter: str
     Youtube: str
     Facebook: str
@@ -58,6 +58,7 @@ class Team:
     IsDisbanded: bool
     RenamedTo: str
     IsLowercase: bool
+    Image: str
 
     Socials: dict
 
@@ -67,7 +68,7 @@ class Team:
             tables="Teams=T",
             fields=(
                 "T.Name, T.Short, T.OverviewPage, T.Location, T.TeamLocation, T.Region, T.OrganizationPage, "
-                "T.Image, T.Twitter, T.Youtube, T.Facebook, T.Instagram, T.Bluesky, T.Discord, T.Snapchat, "
+                "T.Twitter, T.Youtube, T.Facebook, T.Instagram, T.Bluesky, T.Discord, T.Snapchat, "
                 "T.Vk, T.Subreddit, T.Website, T.RosterPhoto, T.IsDisbanded, T.RenamedTo, T.IsLowercase"
             ),
             where=f"T.Name = '{team_name}'"
@@ -89,7 +90,6 @@ class Team:
                 "TeamLocation": "",
                 "Region": "",
                 "OrganizationPage": "",
-                "Image": "",
                 "Website": "",
                 "RosterPhoto": "",
                 "IsDisbanded": False,
@@ -101,6 +101,8 @@ class Team:
             # Populate attributes with data from the query result
             for key, default_value in default_values.items():
                 setattr(self, key, get_attribute_value(team_data, key, default_value))
+
+            self.Image = images_api.get_team_image_url(self.Name)
 
             # Organize social media links into a dictionary, but only include non-null values
             self.Socials = {key: team_data[key] for key in [
@@ -120,13 +122,13 @@ class Team:
             f"Team Location: {self.TeamLocation}\n"
             f"Region: {self.Region}\n"
             f"Organization Page: {self.OrganizationPage}\n"
-            f"Image URL: {self.Image}\n"
             f"Website: {self.Website}\n"
             f"Roster Photo: {self.RosterPhoto}\n"
             f"Is Disbanded: {self.IsDisbanded}\n"
             f"Renamed To: {self.RenamedTo}\n"
             f"Is Lowercase: {self.IsLowercase}\n"
-            f"Socials: {json.dumps(self.Socials, indent=2)}"
+            f"Socials: {json.dumps(self.Socials, indent=2)}\n"
+            f'Image: {self.Image}'
         )
 
     def to_dict(self):
@@ -138,15 +140,15 @@ class Team:
             "TeamLocation": self.TeamLocation,
             "Region": self.Region,
             "OrganizationPage": self.OrganizationPage,
-            "Image": self.Image,
             "Website": self.Website,
             "RosterPhoto": self.RosterPhoto,
             "IsDisbanded": self.IsDisbanded,
             "RenamedTo": self.RenamedTo,
             "IsLowercase": self.IsLowercase,
-            "Socials": self.Socials  # Socials field is included as a dictionary
+            "Socials": self.Socials,  # Socials field is included as a dictionary
+            "Image": self.Image
         }
 
 
 # Example usage:
-#print(Team("Karmine Corp"))
+print(Team("Karmine Corp"))

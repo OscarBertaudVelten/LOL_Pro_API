@@ -1,16 +1,44 @@
-import json
-
-from mwrogue.esports_client import EsportsClient
-def get_player_matches(player_name):
-    site = EsportsClient("lol")
-    response = site.cargo_client.query(
-        tables="ScoreboardPlayers=SP",
-        fields="SP.Link, SP.Team, SP.Champion, SP.Kills, SP.Deaths, SP.Assists",
-        where=f"SP.Link='{player_name}'",
-        order_by="SP.DateTime_UTC DESC",
-        limit=10
-    )
-
-    print(json.dumps(response, indent=2))
-
-get_player_matches("Yike")
+"""
+OverviewPage,
+Name,
+Link,
+Champion,
+Kills,
+Deaths,
+Assists,
+SummonerSpells,
+Gold,
+CS,
+DamageToChampions,
+VisionScore,
+Items,
+Trinket,
+KeystoneMastery,
+KeystoneRune,
+PrimaryTree,
+SecondaryTree,
+Runes - Text
+TeamKills,
+TeamGold,
+Team,
+TeamVs,
+Time,
+PlayerWin,
+DateTime_UTC,
+DST,
+Tournament,
+Role,
+Role_Number,
+IngameRole,
+Side,
+UniqueLine,
+UniqueLineVs,
+UniqueRole,
+UniqueRoleVs,
+GameId,
+MatchId,
+GameTeamId,
+GameRoleId,
+GameRoleIdVs,
+StatsPage
+"""
