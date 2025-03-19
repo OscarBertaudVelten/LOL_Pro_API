@@ -1,5 +1,7 @@
 from mwrogue.esports_client import EsportsClient
 import json
+
+from LOL_Pro_API import images_api
 from LOL_Pro_API.api_tools import get_attribute_value
 import html
 from LOL_Pro_API.teams_api import Team as TeamClass
@@ -80,6 +82,7 @@ class Player:
         IsAutoTeam (bool): Indique si l'équipe est générée automatiquement.
         IsLowContent (bool): Indique si le joueur a peu de contenu disponible.
         Socials (dict): Dictionnaire contenant les liens vers les réseaux sociaux du joueur.
+        Image (str): URL de l'Image du joueur.
 
     Méthodes:
         __init__(player_name: str): Initialise une instance de joueur en récupérant ses données depuis la base de données.
@@ -111,6 +114,7 @@ class Player:
     IsAutoTeam: bool
     IsLowContent: bool
     Socials: dict
+    Image: str
 
     def __init__(self, player_name: str):
         # Fetch player data from the database based on the player's in-game name
@@ -163,6 +167,7 @@ class Player:
             self.IsLowercase = bool(player_data.get('IsLowercase', False))
             self.IsAutoTeam = bool(player_data.get('IsAutoTeam', False))
             self.IsLowContent = bool(player_data.get('IsLowContent', False))
+            self.Image = str(images_api.get_player_image_url(player_name))
 
             # Initialisation de l'équipe avec gestion d'erreur
             team_name = player_data.get('Team', "")
@@ -172,8 +177,6 @@ class Player:
                 print(f"Warning: Failed to initialize Team for player '{self.Player}'. Error: {e}")
                 self.Team = "None"  # Assign None if an error occurs
 
-
-    # Parsing des champs complexes
             self.SoloqueueIds = decode_soloqueue_ids(player_data.get('SoloqueueIds', ""))
             self.FavChamps = parse_fav_champs(player_data.get('FavChamps', ""))
 
@@ -204,7 +207,8 @@ class Player:
                 f"Contract: {self.Contract}\n"
                 f"Favorite Champions: {self.FavChamps}\n"
                 f"Soloqueue IDs: {self.SoloqueueIds}\n"
-                f"Social Media: {json.dumps(self.Socials, indent=2)}")
+                f"Social Media: {json.dumps(self.Socials, indent=2)}\n"
+                f"Image: {self.Image}")
     
 
     def to_dict(self):
@@ -234,8 +238,9 @@ class Player:
             "IsAutoTeam": self.IsAutoTeam,
             "IsLowContent": self.IsLowContent,
             "Socials": self.Socials,
+            "Image": self.Image,
         }
 
 
 # Example usage:
-# print(Player("Melon (Alexis Barrachin)"))
+print(Player("Yike"))

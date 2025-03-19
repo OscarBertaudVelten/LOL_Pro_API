@@ -8,13 +8,13 @@ app = Flask(__name__)
 
 @app.route('/player')
 def get_player_info():
-    pseudo = request.args.get('name', '')
-    return json.dumps(players_api.Player(pseudo).to_dict())
+    name = request.args.get('name', '')
+    return json.dumps(players_api.Player(name).to_dict())
 
 @app.route('/team')
 def get_team_info():
-    pseudo = request.args.get('name', '')
-    return teams_api.Team(pseudo).__str__()
+    name = request.args.get('name', '')
+    return json.dumps(teams_api.Team(name).to_dict())
 
 @app.route('/')
 def helloworld():

@@ -1,20 +1,16 @@
-import html
+import json
 
-# Input string
-input_string = "EUW: KC Yiken &lt;br&gt;KR: YIK"
+from mwrogue.esports_client import EsportsClient
+def get_player_matches(player_name):
+    site = EsportsClient("lol")
+    response = site.cargo_client.query(
+        tables="ScoreboardPlayers=SP",
+        fields="SP.Link, SP.Team, SP.Champion, SP.Kills, SP.Deaths, SP.Assists",
+        where=f"SP.Link='{player_name}'",
+        order_by="SP.DateTime_UTC DESC",
+        limit=10
+    )
 
-# Decode HTML entities
-decoded_string = html.unescape(input_string)
+    print(json.dumps(response, indent=2))
 
-# Split the string by "<br>" (or a space)
-parts = decoded_string.split("<br>")
-
-# Initialize the dictionary
-result = {}
-
-# Iterate through each part and split by ":"
-for part in parts:
-    key, value = part.split(":")
-    result[key.strip()] = value.strip()
-
-print(result)
+get_player_matches("Yike")
