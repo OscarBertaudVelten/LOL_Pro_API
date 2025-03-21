@@ -44,12 +44,12 @@ def get_player_image_url(player):
         return ''
 
 
-def get_team_image_url(team):
+def get_image_url(file_name):
     try:
         response = site.client.api(
             action="query",
             format="json",
-            titles=f"File:{team}logo square.png",
+            titles=f"File:{file_name}",
             prop="imageinfo",
             iiprop="url",
             iiurlwidth=None,

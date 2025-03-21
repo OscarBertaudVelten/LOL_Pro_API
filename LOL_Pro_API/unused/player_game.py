@@ -1,6 +1,6 @@
 from mwrogue.esports_client import EsportsClient
 import json
-from LOL_Pro_API import tournaments_api, api_tools
+from LOL_Pro_API.unused import tournaments_api
 
 site = EsportsClient("lol")
 
@@ -32,4 +32,4 @@ def get_player_game_example():
     )
     return json.dumps(player_example_response, indent=2)
 
-print(get_player_game_example())
+#print(get_player_game_example())

@@ -10,4 +10,4 @@ response = site.cargo_client.query(
     fields="N_GameInMatch",
     where=f"MatchId = '2025 First Stand_Finals_1'"
 )
-print(response)
+#print(response)

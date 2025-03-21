@@ -120,7 +120,7 @@ class Player:
         # Fetch player data from the database based on the player's in-game name
         response = site.cargo_client.query(
             tables="Players=P",
-            fields="P.ID,P.OverviewPage,P.Player,P.Name,P.NameFull,P.Country,P.Nationality,P.NationalityPrimary,P.Age,P.Birthdate,P.Deathdate,P.ResidencyFormer,P.Team,P.Residency,P.Role,P.Contract,P.FavChamps,P.SoloqueueIds,P.Askfm,P.Bluesky,P.Discord,P.Facebook,P.Instagram,P.Lolpros,P.Reddit,P.Snapchat,P.Stream,P.Twitter,P.Threads,P.LinkedIn,P.Vk,P.Website,P.Weibo,P.Youtube,P.RoleLast,P.IsRetired,P.IsSubstitute,P.IsLowercase,P.IsAutoTeam,P.IsLowContent",
+            fields="P.ID,P.OverviewPage,P.Player,P.Name,P.NameFull,P.Country,P.Nationality,P.NationalityPrimary,P.Age,P.Birthdate,P.Deathdate,P.ResidencyFormer,P.Team,P.Residency,P.Role,P.Contract,P.FavChamps,P.SoloqueueIds,P.Askfm,P.Bluesky,P.Discord,P.Facebook,P.Instagram,P.Lolpros,P.Reddit,P.Snapchat,P.Stream,P.Twitter,P.Threads,P.LinkedIn,P.Vk,P.Website,P.Weibo,P.Youtube,P.RoleLast,P.IsRetired,P.IsSubstitute,P.IsLowercase,P.IsAutoTeam,P.IsLowContent, P.Image",
             where=f"P.Player = '{player_name}'"
         )
 
@@ -129,16 +129,32 @@ class Player:
             # Get the player data
             player_data = response[0]
 
+            default_values = {
+                'ID': '',
+                'OverviewPage': '',
+                'Player': '',
+                'Name': '',
+                'NameFull': '',
+                'Country': '',
+                'Nationality': '',
+                'NationalityPrimary': '',
+                'Age': 0,
+                'Birthdate': '',
+                'Deathdate': '',
+                'ResidencyFormer': '',
+                'Residency': '',
+                'Role': '',
+                'RoleLast': '',
+                'Contract': '',
+                'IsRetired': False,
+                'IsSubstitute': False,
+                'IsLowercase': False,
+                'IsAutoTeam': False,
+                'IsLowContent': False
+            }
 
-
-            # Gestion des types spécifiques
-            self.Age = int(player_data.get('Age', 0) or 0)
-            self.IsRetired = bool(player_data.get('IsRetired', False))
-            self.IsSubstitute = bool(player_data.get('IsSubstitute', False))
-            self.IsLowercase = bool(player_data.get('IsLowercase', False))
-            self.IsAutoTeam = bool(player_data.get('IsAutoTeam', False))
-            self.IsLowContent = bool(player_data.get('IsLowContent', False))
-            self.Image = str(images_api.get_player_image_url(player_name))
+            for key, default_value in default_values.items():
+                setattr(self, key, get_attribute_value(player_data, key, default_value))
 
             # Initialisation de l'équipe avec gestion d'erreur
             team_name = player_data.get('Team', "")
@@ -146,7 +162,6 @@ class Player:
                 self.Team = TeamClass(team_name) if team_name else None
             except Exception as e:
                 print(f"Warning: Failed to initialize Team for player '{self.Player}'. Error: {e}")
-                self.Team = "None"  # Assign None if an error occurs
 
             self.SoloqueueIds = decode_soloqueue_ids(player_data.get('SoloqueueIds', ""))
             self.FavChamps = parse_fav_champs(player_data.get('FavChamps', ""))
@@ -156,6 +171,9 @@ class Player:
                              'Reddit', 'Snapchat', 'Stream', 'Twitter', 'Threads', 'LinkedIn',
                              'Vk', 'Website', 'Weibo', 'Youtube']
             self.Socials = {key: player_data[key] for key in social_fields if player_data.get(key)}
+
+            self.Image = images_api.get_player_image_url(player_name)
+            print(player_data)
 
         else:
             raise ValueError(f"Player with name '{player_name}' not found in the database.")
@@ -176,38 +194,7 @@ class Player:
                 f"Soloqueue IDs: {self.SoloqueueIds}\n"
                 f"Social Media: {json.dumps(self.Socials, indent=2)}\n"
                 f"Image: {self.Image}")
-    
-
-    def to_dict(self):
-        return {
-            "ID": self.ID,
-            "OverviewPage": self.OverviewPage,
-            "Player": self.Player,
-            "Name": self.Name,
-            "NameFull": self.NameFull,
-            "Country": self.Country,
-            "Nationality": self.Nationality,
-            "NationalityPrimary": self.NationalityPrimary,
-            "Age": self.Age,
-            "Birthdate": self.Birthdate,
-            "Deathdate": self.Deathdate,
-            "ResidencyFormer": self.ResidencyFormer,
-            "Team": self.Team.to_dict() if self.Team else None,
-            "Residency": self.Residency,
-            "Role": self.Role,
-            "Contract": self.Contract,
-            "FavChamps": self.FavChamps,
-            "SoloqueueIds": self.SoloqueueIds,
-            "RoleLast": self.RoleLast,
-            "IsRetired": self.IsRetired,
-            "IsSubstitute": self.IsSubstitute,
-            "IsLowercase": self.IsLowercase,
-            "IsAutoTeam": self.IsAutoTeam,
-            "IsLowContent": self.IsLowContent,
-            "Socials": self.Socials,
-            "Image": self.Image,
-        }
 
 
 # Example usage:
-print(Player("Yike"))
+Player("Faker")

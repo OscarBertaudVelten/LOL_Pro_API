@@ -181,4 +181,4 @@ def get_nb_games_in_match(match_id: str) -> int:
     return response[0]['nbGames']
 
 # Example usage
-print(get_nb_games_in_match('2025 First Stand_Finals_1'))
+#print(get_nb_games_in_match('2025 First Stand_Finals_1'))
