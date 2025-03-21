@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du Match</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        h2, h3 {
+            color: #555;
+        }
+        .game-info, .team-info {
+            margin-bottom: 30px;
+        }
+        .team-info table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .team-info table, .team-info th, .team-info td {
+            border: 1px solid #ddd;
+        }
+        .team-info th, .team-info td {
+            padding: 8px;
+            text-align: center;
+        }
+        .team-info th {
+            background-color: #f8f8f8;
+        }
+        .vod-link {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+        .vod-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Détails du Match</h1>
+    <div class="game-info">
+        <h2>Informations du Match</h2>
+        <p><strong>Tournament :</strong> <span id="tournament"></span></p>
+        <p><strong>Gagnant :</strong> <span id="winner"></span></p>
+        <p><strong>Date et Heure :</strong> <span id="date-time"></span></p>
+        <p><strong>Durée du Match :</strong> <span id="game-length"></span></p>
+        <p><strong>Patch :</strong> <span id="patch"></span></p>
+        <p><strong>VOD :</strong> <a id="vod-link" href="#" class="vod-link" target="_blank">Voir le match</a></p>
+    </div>
+
+    <div class="team-info">
+        <h2>Équipe 1</h2>
+        <table>
+            <tr><th>Nom</th><td id="team1-name"></td></tr>
+            <tr><th>Score</th><td id="team1-score"></td></tr>
+            <tr><th>Bans</th><td id="team1-bans"></td></tr>
+            <tr><th>Picks</th><td id="team1-picks"></td></tr>
+            <tr><th>Joueurs</th><td id="team1-players"></td></tr>
+            <tr><th>Dragons</th><td id="team1-dragons"></td></tr>
+            <tr><th>Barons</th><td id="team1-barons"></td></tr>
+            <tr><th>Torres</th><td id="team1-towers"></td></tr>
+            <tr><th>Or</th><td id="team1-gold"></td></tr>
+            <tr><th>Kills</th><td id="team1-kills"></td></tr>
+            <tr><th>Rift Heralds</th><td id="team1-rift-heralds"></td></tr>
+            <tr><th>Void Grubs</th><td id="team1-void-grubs"></td></tr>
+            <tr><th>Atakhans</th><td id="team1-atakhans"></td></tr>
+            <tr><th>Inhibitors</th><td id="team1-inhibitors"></td></tr>
+        </table>
+    </div>
+
+    <div class="team-info">
+        <h2>Équipe 2</h2>
+        <table>
+            <tr><th>Nom</th><td id="team2-name"></td></tr>
+            <tr><th>Score</th><td id="team2-score"></td></tr>
+            <tr><th>Bans</th><td id="team2-bans"></td></tr>
+            <tr><th>Picks</th><td id="team2-picks"></td></tr>
+            <tr><th>Joueurs</th><td id="team2-players"></td></tr>
+            <tr><th>Dragons</th><td id="team2-dragons"></td></tr>
+            <tr><th>Barons</th><td id="team2-barons"></td></tr>
+            <tr><th>Torres</th><td id="team2-towers"></td></tr>
+            <tr><th>Or</th><td id="team2-gold"></td></tr>
+            <tr><th>Kills</th><td id="team2-kills"></td></tr>
+            <tr><th>Rift Heralds</th><td id="team2-rift-heralds"></td></tr>
+            <tr><th>Void Grubs</th><td id="team2-void-grubs"></td></tr>
+            <tr><th>Atakhans</th><td id="team2-atakhans"></td></tr>
+            <tr><th>Inhibitors</th><td id="team2-inhibitors"></td></tr>
+        </table>
+    </div>
+</div>
+
+<script>
+    // This function would be used to populate the page with the data
+    async function fetchGameData(gameId) {
+        // Assume you have a backend that fetches the game data
+        // You can fetch data via an API or embed the data directly in a script for now
+        const response = await fetch(`http://localhost:3000/game`);
+        console.log(response)
+        const gameData = await response.json();
+
+        // Update game info
+        document.getElementById('tournament').textContent = gameData.Tournament;
+        document.getElementById('winner').textContent = gameData.Winner === 1 ? "Équipe 1" : "Équipe 2";
+        document.getElementById('date-time').textContent = gameData.DateTimeUTC;
+        document.getElementById('game-length').textContent = gameData.Gamelength;
+        document.getElementById('patch').textContent = gameData.Patch;
+        document.getElementById('vod-link').href = gameData.VOD;
+
+        // Update team 1 stats
+        document.getElementById('team1-name').textContent = gameData.Team1Stats.Name;
+        document.getElementById('team1-score').textContent = gameData.Team1Stats.Score;
+        document.getElementById('team1-bans').textContent = gameData.Team1Stats.Bans.join(', ');
+        document.getElementById('team1-picks').textContent = gameData.Team1Stats.Picks.join(', ');
+        document.getElementById('team1-players').textContent = gameData.Team1Stats.Players.join(', ');
+        document.getElementById('team1-dragons').textContent = gameData.Team1Stats.Dragons;
+        document.getElementById('team1-barons').textContent = gameData.Team1Stats.Barons;
+        document.getElementById('team1-towers').textContent = gameData.Team1Stats.Towers;
+        document.getElementById('team1-gold').textContent = gameData.Team1Stats.Gold;
+        document.getElementById('team1-kills').textContent = gameData.Team1Stats.Kills;
+        document.getElementById('team1-rift-heralds').textContent = gameData.Team1Stats.RiftHeralds;
+        document.getElementById('team1-void-grubs').textContent = gameData.Team1Stats.VoidGrubs;
+        document.getElementById('team1-atakhans').textContent = gameData.Team1Stats.Atakhans;
+        document.getElementById('team1-inhibitors').textContent = gameData.Team1Stats.Inhibitors;
+
+        // Update team 2 stats
+        document.getElementById('team2-name').textContent = gameData.Team2Stats.Name;
+        document.getElementById('team2-score').textContent = gameData.Team2Stats.Score;
+        document.getElementById('team2-bans').textContent = gameData.Team2Stats.Bans.join(', ');
+        document.getElementById('team2-picks').textContent = gameData.Team2Stats.Picks.join(', ');
+        document.getElementById('team2-players').textContent = gameData.Team2Stats.Players.join(', ');
+        document.getElementById('team2-dragons').textContent = gameData.Team2Stats.Dragons;
+        document.getElementById('team2-barons').textContent = gameData.Team2Stats.Barons;
+        document.getElementById('team2-towers').textContent = gameData.Team2Stats.Towers;
+        document.getElementById('team2-gold').textContent = gameData.Team2Stats.Gold;
+        document.getElementById('team2-kills').textContent = gameData.Team2Stats.Kills;
+        document.getElementById('team2-rift-heralds').textContent = gameData.Team2Stats.RiftHeralds;
+        document.getElementById('team2-void-grubs').textContent = gameData.Team2Stats.VoidGrubs;
+        document.getElementById('team2-atakhans').textContent = gameData.Team2Stats.Atakhans;
+        document.getElementById('team2-inhibitors').textContent = gameData.Team2Stats.Inhibitors;
+    }
+
+    // Example usage with gameId "2025_FirstStand_Finals_1"
+    fetchGameData("2025_FirstStand_Finals_1");
+</script>
+</body>
+</html>

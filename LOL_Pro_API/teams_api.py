@@ -133,5 +133,3 @@ class Team:
         }
 
 
-# Example usage:
-#print(vars(Team("Karmine Corp")))

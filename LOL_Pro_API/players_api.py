@@ -153,6 +153,7 @@ class Player:
                 'IsLowContent': False
             }
 
+
             for key, default_value in default_values.items():
                 setattr(self, key, get_attribute_value(player_data, key, default_value))
 
@@ -173,7 +174,6 @@ class Player:
             self.Socials = {key: player_data[key] for key in social_fields if player_data.get(key)}
 
             self.Image = images_api.get_player_image_url(player_name)
-            print(player_data)
 
         else:
             raise ValueError(f"Player with name '{player_name}' not found in the database.")

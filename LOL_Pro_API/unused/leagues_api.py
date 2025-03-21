@@ -61,5 +61,4 @@ class League:
                 f"Level: {self.Level}\n"
                 f"Official: {self.IsOfficial}")
 
-# Example usage:
-# print(League("LEC"))
+

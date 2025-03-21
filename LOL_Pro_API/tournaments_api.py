@@ -149,7 +149,5 @@ def get_primary_recent_tournaments():
     return ", ".join(f"'{entry['Name']}'" for entry in response)
 
 
-# print(get_primary_recent_tournaments())
-# Example usage:
-# print(Tournament("Asia Masters 2025 Swiss 1"))
+
 

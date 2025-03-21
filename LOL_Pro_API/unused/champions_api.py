@@ -94,5 +94,4 @@ class Champion:
             where=f"C.Name = '{champion_name}'"
         )
 
-# Example usage:
-# print(Champion("Aatrox"))
+
