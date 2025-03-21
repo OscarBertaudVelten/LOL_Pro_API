@@ -1,7 +1,7 @@
 from mwrogue.esports_client import EsportsClient
 import json
 from api_tools import get_attribute_value
-from datetime import datetime
+from datetime import datetime, timedelta
 
 site = EsportsClient("lol")
 
@@ -76,30 +76,6 @@ class Tournament:
             # Get the tournament data
             tournament_data = response[0]
 
-            # Define default values for attributes
-            default_values = {
-                'Name': "",
-                'OverviewPage': "",
-                'DateStart': "",
-                'Date': "",
-                'DateStartFuzzy': "",
-                'League': "",
-                'Region': "",
-                'Prizepool': "",
-                'Country': "",
-                'ClosestTimezone': "",
-                'Rulebook': "",
-                'EventType': "",
-                'Split': "",
-                'TournamentLevel': "",
-                'IsQualifier': False,
-                'IsPlayoffs': False,
-                'IsOfficial': False,
-                'Year': "",
-                'LeagueIconKey': "",
-                'IsOngoing': False
-            }
-
             # Populate attributes with data from the query result
             self.Name: str = tournament_data['Name']
             self.OverviewPage: str = tournament_data['OverviewPage']
@@ -124,10 +100,6 @@ class Tournament:
 
         else:
             raise ValueError(f"Tournament with name '{tournament_name}' not found in the database.")
-
-        # Apply default values where necessary
-        for key, default_value in default_values.items():
-            setattr(self, key, get_attribute_value(tournament_data, key, default_value))
 
 
     def is_ongoing(self) -> bool:
@@ -166,15 +138,18 @@ class Tournament:
                 f"Icon Key: {self.LeagueIconKey}")
 
 
-def getPrimaryTournaments():
+def get_primary_recent_tournaments():
+    six_months_ago = (datetime.today() - timedelta(days=180)).strftime("%Y-%m-%d")
+
     response = site.cargo_client.query(
         tables="Tournaments=T",
         fields="T.Name",
-        where="T.TournamentLevel='Primary' AND T.Year >= 2024"
+        where=f"T.TournamentLevel='Primary' AND T.Date >= '{six_months_ago}'"
     )
-    return [entry["Name"] for entry in response]
+    return ", ".join(f"'{entry['Name']}'" for entry in response)
 
-print(getPrimaryTournaments())
+
+# print(get_primary_recent_tournaments())
 # Example usage:
 # print(Tournament("Asia Masters 2025 Swiss 1"))
 

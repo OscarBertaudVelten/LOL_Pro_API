@@ -35,26 +35,12 @@ class Contract:
     def __init__(self, contract_data: dict):
         # Fetch contract data from the database based on the player's name
 
-
-        # Define default values for attributes
-        default_values = {
-            'Player': "",
-            'Team': "",
-            'ContractEnd': "",
-            'IsRemoval': False,
-            'NewsId': ""
-        }
-
         # Populate attributes with data from the query result
         self.Player: str = contract_data['Player']
         self.Team: str = contract_data['Team']
         self.ContractEnd: str = contract_data['ContractEnd']
         self.IsRemoval: bool = bool(contract_data['IsRemoval'])
         self.NewsId: str = contract_data['NewsId']
-
-        # Apply default values where necessary
-        for key, default_value in default_values.items():
-            setattr(self, key, get_attribute_value(contract_data, key, default_value))
 
     def __str__(self):
         # String representation that includes essential details about the contract

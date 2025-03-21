@@ -129,36 +129,7 @@ class Player:
             # Get the player data
             player_data = response[0]
 
-            # Define default values for attributes
-            default_values = {
-                'ID': "",
-                'OverviewPage': "",
-                'Player': "",
-                'Name': "",
-                'NameFull': "",
-                'Country': "",
-                'Nationality': "",
-                'NationalityPrimary': "",
-                'Age': 0,
-                'Birthdate': "",
-                'Deathdate': "",
-                'ResidencyFormer': "",
-                'Residency': "",
-                'Role': "",
-                'Contract': "",
-                'FavChamps': [],
-                'SoloqueueIds': {},
-                'RoleLast': "",
-                'IsRetired': False,
-                'IsSubstitute': False,
-                'IsLowercase': False,
-                'IsAutoTeam': False,
-                'IsLowContent': False
-            }
 
-            # Assignation des valeurs avec `get` pour éviter les erreurs
-            for key, default_value in default_values.items():
-                setattr(self, key, get_attribute_value(player_data, key, default_value))
 
             # Gestion des types spécifiques
             self.Age = int(player_data.get('Age', 0) or 0)
@@ -188,10 +159,6 @@ class Player:
 
         else:
             raise ValueError(f"Player with name '{player_name}' not found in the database.")
-
-        # Apply default values where necessary
-        for key, default_value in default_values.items():
-            setattr(self, key, get_attribute_value(player_data, key, default_value))
 
 
     def __str__(self):

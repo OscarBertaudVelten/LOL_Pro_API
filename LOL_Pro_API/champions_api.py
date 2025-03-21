@@ -99,47 +99,39 @@ class Champion:
             # Get the champion data
             champ_data = response[0]
 
-            # Define the default values for attributes
-            default_values = {
-                'BE': 0,
-                'RP': 0,
-                'Attributes': "",
-                'Resource': "",
-                'RealName': "N/A",
-                'Health': 0,
-                'HPLevel': 0,
-                'HPDisplay': "0",
-                'HPLevelDisplay': "0",
-                'HPRegen': 0,
-                'HPRegenLevel': 0,
-                'Mana': 0,
-                'ManaLevel': 0,
-                'ManaRegen': 0,
-                'ManaRegenLevel': 0,
-                'Energy': 0,
-                'EnergyRegen': 0,
-                'Movespeed': 0,
-                'AttackDamage': 0,
-                'ADLevel': 0,
-                'AttackSpeed': 0,
-                'ASLevel': 0,
-                'AttackRange': 0,
-                'Armor': 0,
-                'ArmorLevel': 0,
-                'MagicResist': 0,
-                'MagicResistLevel': 0,
-                'Pronoun': "",
-                'KeyInteger': 0
-            }
-
             # Populate attributes with data from the query result
-            self.Name: str = champ_data['Name']
-            self.Title: str = champ_data['Title']
-            self.ReleaseDate: str = champ_data['ReleaseDate']
-
-            # Loop over each attribute and assign it the corresponding value or default
-            for key, default_value in default_values.items():
-                setattr(self, key, get_attribute_value(champ_data, key, default_value))
+            self.Name = champ_data['Name']
+            self.Title = champ_data['Title']
+            self.ReleaseDate = champ_data['ReleaseDate']
+            self.BE = champ_data['BE']
+            self.RP = champ_data['RP']
+            self.Attributes = champ_data['Attributes']
+            self.Resource = champ_data['Resource']
+            self.RealName = champ_data['RealName'] if champ_data['RealName'] != 'null' else None
+            self.Health = champ_data['Health']
+            self.HPLevel = champ_data['HPLevel']
+            self.HPDisplay = champ_data['HPDisplay']
+            self.HPLevelDisplay = champ_data['HPLevelDisplay']
+            self.HPRegen = champ_data['HPRegen']
+            self.HPRegenLevel = champ_data['HPRegenLevel']
+            self.Mana = champ_data['Mana'] if champ_data['Mana'] != 'null' else None
+            self.ManaLevel = champ_data['ManaLevel'] if champ_data['ManaLevel'] != 'null' else None
+            self.ManaRegen = champ_data['ManaRegen'] if champ_data['ManaRegen'] != 'null' else None
+            self.ManaRegenLevel = champ_data['ManaRegenLevel'] if champ_data['ManaRegenLevel'] != 'null' else None
+            self.Energy = champ_data['Energy'] if champ_data['Energy'] != 'null' else None
+            self.EnergyRegen = champ_data['EnergyRegen'] if champ_data['EnergyRegen'] != 'null' else None
+            self.Movespeed = champ_data['Movespeed']
+            self.AttackDamage = champ_data['AttackDamage']
+            self.ADLevel = champ_data['ADLevel']
+            self.AttackSpeed = champ_data['AttackSpeed']
+            self.ASLevel = champ_data['ASLevel']
+            self.AttackRange = champ_data['AttackRange']
+            self.Armor = champ_data['Armor']
+            self.ArmorLevel = champ_data['ArmorLevel']
+            self.MagicResist = champ_data['MagicResist']
+            self.MagicResistLevel = champ_data['MagicResistLevel']
+            self.Pronoun = champ_data['Pronoun']
+            self.KeyInteger = champ_data['KeyInteger']
         else:
             raise ValueError(f"Champion '{champion_name}' not found in the database.")
 

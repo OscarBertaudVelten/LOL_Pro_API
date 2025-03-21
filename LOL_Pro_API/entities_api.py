@@ -63,17 +63,6 @@ class Entity:
             raise ValueError(f"Entity with name '{entity_name}' not found in the database.")
 
     def _populate_entity_data(self, entity_data):
-        # Default values
-        default_values = {
-            'Entity': "",
-            'EntityName': "",
-            'EntityPage': "",
-            'EntityType': "",
-            'Display': "",
-            'IsLowercase': False,
-            'DisambigSentence': ""
-        }
-
         # Populate attributes with data from the query result
         self.Entity = entity_data['Entity']
         self.EntityName = entity_data['EntityName']
@@ -82,10 +71,6 @@ class Entity:
         self.Display = entity_data['Display']
         self.IsLowercase = bool(entity_data['IsLowercase'])
         self.DisambigSentence = entity_data['DisambigSentence']
-
-        # Apply default values where necessary
-        for key, default_value in default_values.items():
-            setattr(self, key, get_attribute_value(entity_data, key, default_value))
 
     def _handle_disambiguation(self, response, disambiguation):
         # If there are multiple results, we need to find the correct entity to use

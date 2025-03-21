@@ -9,11 +9,16 @@ def get_player_image_url(player):
             tables="PlayerImages=PI, Tournaments=T",
             fields="PI.FileName",
             join_on="PI.Tournament=T.OverviewPage",
-            where='Link="%s"' % player,
+            where=f'Link="{player}"',
             order_by="PI.SortDate DESC, T.DateStart DESC"
         )
 
-        filename = response[0]['FileName']
+        if not response:
+            return ''
+
+        filename = response[0].get('FileName')
+        if not filename:
+            return ''
 
         response = site.client.api(
             action="query",
@@ -24,25 +29,42 @@ def get_player_image_url(player):
             iiurlwidth=None,
         )
 
-        image_info = next(iter(response["query"]["pages"].values()))["imageinfo"][0]
+        pages = response.get("query", {}).get("pages", {})
+        if not pages:
+            return ''  # No pages found
 
-        return image_info["url"]
-    except Exception:
+        image_info = next(iter(pages.values()), {}).get("imageinfo", [])
+        if not image_info:
+            return ''  # No image info found
+
+        return image_info[0].get("url", '')
+
+    except Exception as e:
+        print(f"Error fetching player image: {e}")
         return ''
 
 
-
 def get_team_image_url(team):
-    response = site.client.api(
-        action="query",
-        format="json",
-        titles=f"File:{team}logo square.png",
-        prop="imageinfo",
-        iiprop="url",
-        iiurlwidth=None,
-    )
+    try:
+        response = site.client.api(
+            action="query",
+            format="json",
+            titles=f"File:{team}logo square.png",
+            prop="imageinfo",
+            iiprop="url",
+            iiurlwidth=None,
+        )
 
-    image_info = next(iter(response["query"]["pages"].values()))["imageinfo"][0]
+        pages = response.get("query", {}).get("pages", {})
+        if not pages:
+            return ''  # No pages found
 
-    return image_info["url"]
+        image_info = next(iter(pages.values()), {}).get("imageinfo", [])
+        if not image_info:
+            return ''  # No image info found
 
+        return image_info[0].get("url", '')
+
+    except Exception as e:
+        print(f"Error fetching team image: {e}")
+        return ''

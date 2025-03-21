@@ -45,15 +45,6 @@ class League:
             # Get the league data
             league_data = response[0]
 
-            # Define the default values for attributes
-            default_values = {
-                'League': "",
-                'League Short': "",
-                'Region': "",
-                'Level': "",
-                'IsOfficial': "No"
-            }
-
             # Populate attributes with data from the query result
             self.League: str = league_data['League']
             self.League_Short: str = league_data['League Short']
@@ -62,9 +53,6 @@ class League:
             self.IsOfficial: str = league_data['IsOfficial']
         else:
             raise ValueError(f"League with short name '{league_short}' not found in the database.")
-
-        for key, default_value in default_values.items():
-            setattr(self, key, get_attribute_value(league_data, key, default_value))
 
     def __str__(self):
         # String representation that includes essential details about the league

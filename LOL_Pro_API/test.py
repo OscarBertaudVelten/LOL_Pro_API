@@ -1,44 +1,13 @@
-"""
-OverviewPage,
-Name,
-Link,
-Champion,
-Kills,
-Deaths,
-Assists,
-SummonerSpells,
-Gold,
-CS,
-DamageToChampions,
-VisionScore,
-Items,
-Trinket,
-KeystoneMastery,
-KeystoneRune,
-PrimaryTree,
-SecondaryTree,
-Runes - Text
-TeamKills,
-TeamGold,
-Team,
-TeamVs,
-Time,
-PlayerWin,
-DateTime_UTC,
-DST,
-Tournament,
-Role,
-Role_Number,
-IngameRole,
-Side,
-UniqueLine,
-UniqueLineVs,
-UniqueRole,
-UniqueRoleVs,
-GameId,
-MatchId,
-GameTeamId,
-GameRoleId,
-GameRoleIdVs,
-StatsPage
-"""
+from mwrogue.esports_client import EsportsClient
+import json
+from datetime import datetime
+from api_tools import get_attribute_value
+
+site = EsportsClient("lol")
+
+response = site.cargo_client.query(
+    tables="ScoreboardGames",
+    fields="N_GameInMatch",
+    where=f"MatchId = '2025 First Stand_Finals_1'"
+)
+print(response)

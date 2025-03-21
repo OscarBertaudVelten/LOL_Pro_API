@@ -74,33 +74,10 @@ class Team:
             where=f"T.Name = '{team_name}'"
         )
 
-
-
         # Check if we got any data for the team
         if response and len(response) > 0:
             # Get the team data
             team_data = response[0]
-
-            # Define default values for attributes
-            default_values = {
-                "Name": "",
-                "Short": "",
-                "OverviewPage": "",
-                "Location": "",
-                "TeamLocation": "",
-                "Region": "",
-                "OrganizationPage": "",
-                "Website": "",
-                "RosterPhoto": "",
-                "IsDisbanded": False,
-                "RenamedTo": "",
-                "IsLowercase": False,
-                "Sovials": {}
-            }
-
-            # Populate attributes with data from the query result
-            for key, default_value in default_values.items():
-                setattr(self, key, get_attribute_value(team_data, key, default_value))
 
             self.Image = images_api.get_team_image_url(self.Name)
 
@@ -131,24 +108,6 @@ class Team:
             f'Image: {self.Image}'
         )
 
-    def to_dict(self):
-        return {
-            "Name": self.Name,
-            "Short": self.Short,
-            "OverviewPage": self.OverviewPage,
-            "Location": self.Location,
-            "TeamLocation": self.TeamLocation,
-            "Region": self.Region,
-            "OrganizationPage": self.OrganizationPage,
-            "Website": self.Website,
-            "RosterPhoto": self.RosterPhoto,
-            "IsDisbanded": self.IsDisbanded,
-            "RenamedTo": self.RenamedTo,
-            "IsLowercase": self.IsLowercase,
-            "Socials": self.Socials,  # Socials field is included as a dictionary
-            "Image": self.Image
-        }
-
 
 # Example usage:
-print(Team("Karmine Corp"))
+print(vars(Team("Karmine Corp")))
