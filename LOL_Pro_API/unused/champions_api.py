@@ -1,6 +1,6 @@
 from mwrogue.esports_client import EsportsClient
 import json
-from api_tools import get_attribute_value
+
 
 site = EsportsClient("lol")
 
@@ -94,4 +94,8 @@ class Champion:
             where=f"C.Name = '{champion_name}'"
         )
 
+        print(json.dumps(response, indent=2))
 
+
+
+Champion("Aatrox")

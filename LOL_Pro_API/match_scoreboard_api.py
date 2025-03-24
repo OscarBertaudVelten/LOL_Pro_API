@@ -96,7 +96,7 @@ def get_last_n_matches_of_player(player_name: str, n: int):
     last_matches = site.cargo_client.query(
         tables="ScoreboardGames=SG, ScoreboardPlayers=SP",
         join_on="SG.GameId=SP.GameId",
-        fields="SP.MatchId, SG.Team1, SG.Team2, SG.DateTime_UTC, SG.Tournament",
+        fields="SP.MatchId, SG.DateTime_UTC, SG.Tournament",
         where=f"SP.Name = '{player_name}'",
         group_by="SP.MatchId",
         order_by="SG.DateTime_UTC DESC",
@@ -105,24 +105,30 @@ def get_last_n_matches_of_player(player_name: str, n: int):
 
 
     for match in last_matches:
+        match = get_match_info(match)
+
         match["Team1Image"] = images_api.get_image_url_with_teamname(match["Team1"])
         match["Team2Image"] = images_api.get_image_url_with_teamname(match["Team2"])
 
-        match["Team1Score"], match["Team2Score"] = get_match_score(match["MatchId"])
         match["MatchId"] = match["MatchId"].replace("/", " ").replace("_", " ")
     return last_matches
 
 
-def get_match_score(match_id: str):
+def get_match_info(match: dict):
     response = site.cargo_client.query(
         tables="ScoreboardGames",
-        fields="Team1Score, Team2Score",
+        fields="Team1Score, Team2Score, Team1, Team2",
         order_by="DateTime_UTC DESC",
-        where=f"MatchId = '{match_id}'",
+        where=f"MatchId = '{match['MatchId']}'",
         limit=1
     )
+    tmp_match = response[-1]
+    match["Team1"] = tmp_match["Team1"]
+    match["Team2"] = tmp_match["Team2"]
+    match["Team1Score"] = tmp_match["Team1Score"]
+    match["Team2Score"] = tmp_match["Team2Score"]
 
-    return response[-1]["Team1Score"], response[-1]["Team2Score"]
+    return match
 
 
 if __name__ == "__main__":

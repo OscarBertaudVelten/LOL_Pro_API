@@ -197,4 +197,6 @@ class Player:
 
 
 if __name__ == "__main__":
-    Player("Faker")
+    player = Player("Faker")
+    player.Team = player.Team.to_dict()
+    print(json.dumps(player.__dict__, indent=2))
