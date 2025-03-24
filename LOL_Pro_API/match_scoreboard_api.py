@@ -3,7 +3,7 @@ from typing import List
 
 from mwrogue.esports_client import EsportsClient
 
-from LOL_Pro_API.game_scoreboard_api import GameScoreboard, TeamStats
+from LOL_Pro_API.game_scoreboard_api import GameScoreboard
 from LOL_Pro_API.teams_api import Team
 
 site = EsportsClient("lol")
@@ -88,4 +88,22 @@ class MatchScoreboard:
                 f"Final Score - {self.Team1.Name}: {self.Team1Score} | {self.Team2.Name}: {self.Team2Score}")
 
 
-#print(MatchScoreboard("2025 First Stand_Finals_1"))
+def get_last_n_matches_of_player(player_name: str, n: int):
+    response = site.cargo_client.query(
+        tables="ScoreboardGames=SG, ScoreboardPlayers=SP",
+        join_on="SG.GameId=SP.GameId",
+        fields="SP.MatchId, SG.Team1, SG.Team2, SG.DateTime_UTC",
+        where=f"SP.Name = '{player_name}'",
+        group_by="SP.MatchId",
+        order_by="SG.DateTime_UTC DESC",
+        limit=n
+    )
+    return response
+
+
+
+if __name__ == "__main__":
+    print("")
+
+
+

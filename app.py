@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Response
 from flask_cors import CORS
 
 from LOL_Pro_API import players_api, game_scoreboard_api, match_scoreboard_api
@@ -10,13 +10,16 @@ CORS(app)
 @app.route('/player', methods=['GET'])
 def get_player_info():
     name = request.args.get('name', '')
-    player = players_api.Player(name)
+    try:
+        player = players_api.Player(name)
 
-    # Use to_dict() for serialization
-    if player.Team:
-        player.Team = player.Team.to_dict()
+        # Use to_dict() for serialization
+        if player.Team:
+            player.Team = player.Team.to_dict()
 
-    return jsonify(player.__dict__)
+        return jsonify(player.__dict__)
+    except:
+        return Response(status=404)
 
 @app.route('/team', methods=['GET'])
 def get_team_info():

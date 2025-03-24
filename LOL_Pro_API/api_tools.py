@@ -3,6 +3,9 @@ from mwrogue.esports_client import EsportsClient
 site = EsportsClient("lol")
 
 
+TRACKED_REGIONS = ['Asia Pacific', 'International', 'Europe', 'China', 'Americas', 'Korea']
+
+
 def get_attribute_value(data, key, default_value):
     """Helper function to get the value of an attribute, with a fallback to the default value."""
     if isinstance(default_value, bool):

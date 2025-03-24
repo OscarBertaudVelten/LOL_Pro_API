@@ -68,3 +68,6 @@ def get_image_url(file_name):
     except Exception as e:
         print(f"Error fetching team image: {e}")
         return ''
+
+if __name__ == "__main__":
+    print("main")

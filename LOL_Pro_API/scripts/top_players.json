@@ -1,0 +1,56 @@
+{
+    "First Stand 2025": {
+        "name": "Viper",
+        "stats": {
+            "kills": 95,
+            "deaths": 27,
+            "assists": 139,
+            "kda": 8.7
+        }
+    },
+    "PCS 2025 Split 1": {
+        "name": "XiaoXiang",
+        "stats": {
+            "kills": 9,
+            "deaths": 1,
+            "assists": 14,
+            "kda": 23.0
+        }
+    },
+    "LEC 2025 Winter Playoffs": {
+        "name": "Upset",
+        "stats": {
+            "kills": 96,
+            "deaths": 29,
+            "assists": 101,
+            "kda": 6.8
+        }
+    },
+    "LPL 2025 Split 1 Playoffs": {
+        "name": "Knight",
+        "stats": {
+            "kills": 68,
+            "deaths": 24,
+            "assists": 78,
+            "kda": 6.1
+        }
+    },
+    "LCK Cup 2025": {
+        "name": "Aiming",
+        "stats": {
+            "kills": 117,
+            "deaths": 34,
+            "assists": 170,
+            "kda": 8.4
+        }
+    },
+    "LTA 2025 Split 1 Playoffs": {
+        "name": "Yeon",
+        "stats": {
+            "kills": 59,
+            "deaths": 12,
+            "assists": 61,
+            "kda": 10.0
+        }
+    }
+}

@@ -196,5 +196,5 @@ class Player:
                 f"Image: {self.Image}")
 
 
-# Example usage:
-Player("Faker")
+if __name__ == "__main__":
+    Player("Faker")

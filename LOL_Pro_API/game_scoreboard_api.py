@@ -243,3 +243,5 @@ def get_nb_games_in_game(game_id: str) -> int:
 
     return response[0]['nbGames']
 
+if __name__ == "__main__":
+    print("main")

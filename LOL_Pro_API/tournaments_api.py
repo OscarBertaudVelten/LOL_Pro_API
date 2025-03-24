@@ -149,5 +149,8 @@ def get_primary_recent_tournaments():
     return ", ".join(f"'{entry['Name']}'" for entry in response)
 
 
+if __name__ == "__main__":
+    print(get_primary_recent_tournaments())
+
 
 
