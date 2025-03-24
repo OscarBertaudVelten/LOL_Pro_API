@@ -60,6 +60,9 @@ def get_last_player_games():
     return jsonify(match_scoreboard_api.get_last_n_matches_of_player(name, nb_games))
 
 
+
+
+
 @app.route('/')
 def helloworld():
     return 'hello world'

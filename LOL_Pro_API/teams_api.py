@@ -86,8 +86,8 @@ class Team:
             for key, default_value in default_values.items():
                 setattr(self, key, get_attribute_value(team_data, key, default_value))
 
-            self.Image = images_api.get_image_url(team_data['Image'])
-            self.RosterPhoto = images_api.get_image_url(team_data['RosterPhoto'])
+            self.Image = images_api.get_image_url_with_filename(team_data['Image'])
+            self.RosterPhoto = images_api.get_image_url_with_filename(team_data['RosterPhoto'])
 
             social_fields = ['Twitter', 'Youtube', 'Facebook', 'Instagram',
                              'Bluesky', 'Discord', 'Snapchat', 'Vk', 'Subreddit', 'Website']

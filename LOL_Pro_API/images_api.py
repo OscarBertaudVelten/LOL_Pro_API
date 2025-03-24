@@ -44,7 +44,7 @@ def get_player_image_url(player):
         return ''
 
 
-def get_image_url(file_name):
+def get_image_url_with_filename(file_name):
     try:
         response = site.client.api(
             action="query",
@@ -65,6 +65,19 @@ def get_image_url(file_name):
 
         return image_info[0].get("url", '')
 
+    except Exception as e:
+        print(f"Error fetching image: {e}")
+        return ''
+
+
+def get_image_url_with_teamname(team_name: str):
+    try:
+        response = site.cargo_client.query(
+            tables="Teams=T",
+            fields="T.Image",
+            where=f"T.Name = '{team_name}'"
+        )
+        return get_image_url_with_filename(response[0]['Image'])
     except Exception as e:
         print(f"Error fetching team image: {e}")
         return ''

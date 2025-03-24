@@ -3,6 +3,7 @@ from typing import List
 
 from mwrogue.esports_client import EsportsClient
 
+from LOL_Pro_API import images_api
 from LOL_Pro_API.game_scoreboard_api import GameScoreboard
 from LOL_Pro_API.teams_api import Team
 
@@ -89,21 +90,43 @@ class MatchScoreboard:
 
 
 def get_last_n_matches_of_player(player_name: str, n: int):
-    response = site.cargo_client.query(
+    if n > 20:
+        n = 20
+
+    last_matches = site.cargo_client.query(
         tables="ScoreboardGames=SG, ScoreboardPlayers=SP",
         join_on="SG.GameId=SP.GameId",
-        fields="SP.MatchId, SG.Team1, SG.Team2, SG.DateTime_UTC",
+        fields="SP.MatchId, SG.Team1, SG.Team2, SG.DateTime_UTC, SG.Tournament",
         where=f"SP.Name = '{player_name}'",
         group_by="SP.MatchId",
         order_by="SG.DateTime_UTC DESC",
         limit=n
     )
-    return response
 
+
+    for match in last_matches:
+        match["Team1Image"] = images_api.get_image_url_with_teamname(match["Team1"])
+        match["Team2Image"] = images_api.get_image_url_with_teamname(match["Team2"])
+
+        match["Team1Score"], match["Team2Score"] = get_match_score(match["MatchId"])
+        match["MatchId"] = match["MatchId"].replace("/", " ").replace("_", " ")
+    return last_matches
+
+
+def get_match_score(match_id: str):
+    response = site.cargo_client.query(
+        tables="ScoreboardGames",
+        fields="Team1Score, Team2Score",
+        order_by="DateTime_UTC DESC",
+        where=f"MatchId = '{match_id}'",
+        limit=1
+    )
+
+    return response[-1]["Team1Score"], response[-1]["Team2Score"]
 
 
 if __name__ == "__main__":
-    print("")
+    print(json.dumps(get_last_n_matches_of_player("Faker", 5), indent=2))
 
 
 
