@@ -51,12 +51,18 @@ def get_match_info():
 
     return jsonify(match.__dict__)
 
+
+@app.route('/last_games', methods=['GET'])
+def get_last_player_games():
+    name = request.args.get('name', '')
+    nb_games = request.args.get('nb_games', 5)
+
+    return jsonify(match_scoreboard_api.get_last_n_matches_of_player(name, nb_games))
+
+
 @app.route('/')
 def helloworld():
     return 'hello world'
 
-@app.route('/test')
-def test():
-    return "test"
 
 app.run("0.0.0.0", 80)

@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06fb35e1-8603-4502-b360-285d6c6b2193" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/LOL_Pro_API/scripts/top_players.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LOL_Pro_API/scripts/top_players_by_region.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LOL_Pro_API/api_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/LOL_Pro_API/api_tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LOL_Pro_API/game_scoreboard_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/LOL_Pro_API/game_scoreboard_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LOL_Pro_API/images_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/LOL_Pro_API/images_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LOL_Pro_API/match_scoreboard_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/LOL_Pro_API/match_scoreboard_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LOL_Pro_API/players_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/LOL_Pro_API/players_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LOL_Pro_API/teams_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/LOL_Pro_API/teams_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LOL_Pro_API/tournaments_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/LOL_Pro_API/tournaments_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,12 +70,13 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\All\Projects\Lol-Esports-App\LOL_Pro_API\scripts" />
       <recent name="C:\All\Projects\Lol-Esports-App\LOL_Pro_API" />
       <recent name="C:\All\Projects\Lol-Esports-App\LOL_Pro_API\unused" />
       <recent name="C:\All\Projects\Lol-Esports-App" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.match_scoreboard_api">
+  <component name="RunManager">
     <configuration name="match_scoreboard_api" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Lol-Esports-App" />
       <option name="ENV_FILES" value="" />
@@ -174,7 +166,7 @@
       <workItem from="1742543200896" duration="9096000" />
       <workItem from="1742564100465" duration="974000" />
       <workItem from="1742565294855" duration="7696000" />
-      <workItem from="1742810130873" duration="8484000" />
+      <workItem from="1742810130873" duration="9033000" />
     </task>
     <servers />
   </component>
