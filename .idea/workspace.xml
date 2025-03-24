@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06fb35e1-8603-4502-b360-285d6c6b2193" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/LOL_Pro_API/scripts/top_players.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/LOL_Pro_API/scripts/top_players_by_region.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LOL_Pro_API/api_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/LOL_Pro_API/api_tools.py" afterDir="false" />
@@ -173,7 +174,7 @@
       <workItem from="1742543200896" duration="9096000" />
       <workItem from="1742564100465" duration="974000" />
       <workItem from="1742565294855" duration="7696000" />
-      <workItem from="1742810130873" duration="8128000" />
+      <workItem from="1742810130873" duration="8484000" />
     </task>
     <servers />
   </component>
