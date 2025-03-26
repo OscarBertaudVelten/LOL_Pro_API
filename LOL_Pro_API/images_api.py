@@ -83,4 +83,4 @@ def get_image_url_with_teamname(team_name: str):
         return ''
 
 if __name__ == "__main__":
-    print(get_image_url_with_player_name("Yeon (Sean Sung)"))
+    print(get_image_url_with_player_name("Viper (Park Do-hyeon)"))
