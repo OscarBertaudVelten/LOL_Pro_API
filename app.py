@@ -61,7 +61,7 @@ def get_last_player_games():
 
 
 @app.route('/trending_players')
-def return_json_file():
+def get_trending_players():
     return send_file('LOL_Pro_API/scripts/top_players.json', mimetype='application/json')
 
 
