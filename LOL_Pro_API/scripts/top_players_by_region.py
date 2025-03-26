@@ -4,6 +4,7 @@ from time import sleep
 
 from mwrogue.esports_client import EsportsClient
 
+from LOL_Pro_API import images_api
 from LOL_Pro_API.api_tools import TRACKED_REGIONS
 
 nb_requests = 0
@@ -129,6 +130,9 @@ def get_top_players_in_tracked_regions():
                 max_kda = player_stats['kda']
 
         print(f"Top player in {tournament_name}: {top_players[tournament_name]['name']} with KDA {top_players[tournament_name]['stats']['kda']}")
+
+    for tournament, player in top_players.items():
+        player['Image'] = images_api.get_image_url_with_player_name(player['name'])
 
     with open("top_players.json", "w") as file:
         json.dump(top_players, file, indent=4)

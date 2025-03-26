@@ -104,7 +104,6 @@ class Player:
     Birthdate: str
     Deathdate: str
     ResidencyFormer: str
-    Team: TeamClass
     Residency: str
     Role: str
     Contract: str
@@ -163,9 +162,8 @@ class Player:
             # Initialisation de l'équipe avec gestion d'erreur
             team_name = player_data.get('Team', "")
             try:
-                self.Team = TeamClass(team_name) if team_name else None
+                self.Team = TeamClass(team_name) if team_name else emptyTeam()
             except Exception as e:
-                self.Team = emptyTeam()
                 print(f"Warning: Failed to initialize Team for player '{self.Player}'. Error: {e}")
 
             self.SoloqueueIds = decode_soloqueue_ids(player_data.get('SoloqueueIds', ""))

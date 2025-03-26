@@ -2,14 +2,14 @@ from mwrogue.esports_client import EsportsClient
 
 site = EsportsClient("lol")
 
-def get_player_image_url(player):
+def get_image_url_with_player_name(player_name: str):
     try:
         response = site.cargo_client.query(
             limit=1,
             tables="PlayerImages=PI, Tournaments=T",
             fields="PI.FileName",
             join_on="PI.Tournament=T.OverviewPage",
-            where=f'Link="{player}"',
+            where=f'Link="{player_name}"',
             order_by="PI.SortDate DESC, T.DateStart DESC"
         )
 
@@ -73,9 +73,9 @@ def get_image_url_with_filename(file_name):
 def get_image_url_with_teamname(team_name: str):
     try:
         response = site.cargo_client.query(
-            tables="Teams=T",
-            fields="T.Image",
-            where=f"T.Name = '{team_name}'"
+            tables="Teams",
+            fields="Image",
+            where=f"Name = '{team_name}'"
         )
         return get_image_url_with_filename(response[0]['Image'])
     except Exception as e:
@@ -83,4 +83,4 @@ def get_image_url_with_teamname(team_name: str):
         return ''
 
 if __name__ == "__main__":
-    print("main")
+    print(get_image_url_with_player_name("Yeon (Sean Sung)"))

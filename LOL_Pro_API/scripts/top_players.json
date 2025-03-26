@@ -6,16 +6,18 @@
             "deaths": 27,
             "assists": 139,
             "kda": 8.7
-        }
+        },
+        "Image": ""
     },
     "PCS 2025 Split 1": {
-        "name": "XiaoXiang",
+        "name": "Feng (Chen Chun-Feng)",
         "stats": {
-            "kills": 9,
-            "deaths": 1,
-            "assists": 14,
-            "kda": 23.0
-        }
+            "kills": 85,
+            "deaths": 19,
+            "assists": 93,
+            "kda": 9.4
+        },
+        "Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/5/57/BYG_Feng_2024_Split_1.png/revision/latest?cb=20240121152242"
     },
     "LEC 2025 Winter Playoffs": {
         "name": "Upset",
@@ -24,16 +26,18 @@
             "deaths": 29,
             "assists": 101,
             "kda": 6.8
-        }
+        },
+        "Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/0/01/FNC_Upset_2025_Split_1.png/revision/latest?cb=20250125185704"
     },
     "LPL 2025 Split 1 Playoffs": {
-        "name": "Knight",
+        "name": "Knight (Zhuo Ding)",
         "stats": {
             "kills": 68,
             "deaths": 24,
             "assists": 78,
             "kda": 6.1
-        }
+        },
+        "Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/8/8e/BN_knight_LPL_AS_2024.png/revision/latest?cb=20250215192644"
     },
     "LCK Cup 2025": {
         "name": "Aiming",
@@ -42,15 +46,17 @@
             "deaths": 34,
             "assists": 170,
             "kda": 8.4
-        }
+        },
+        "Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/c/cd/BLG_Aiming_2021_Split_1_New.png/revision/latest?cb=20210224041737"
     },
     "LTA 2025 Split 1 Playoffs": {
-        "name": "Yeon",
+        "name": "Yeon (Sean Sung)",
         "stats": {
             "kills": 59,
             "deaths": 12,
             "assists": 61,
             "kda": 10.0
-        }
+        },
+        "Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/4/48/TL_Yeon_2025_Split_1.png/revision/latest?cb=20250311032323"
     }
 }
