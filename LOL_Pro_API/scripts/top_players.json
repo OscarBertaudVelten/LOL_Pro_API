@@ -1,23 +1,23 @@
 {
     "First Stand 2025": {
-        "name": "Viper (Park Do-hyeon)",
+        "name": "Caliste",
         "stats": {
             "kills": 95,
             "deaths": 27,
             "assists": 139,
             "kda": 8.7
         },
-        "Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/8/8a/HLE_Viper_2025_Split_1_2.png/revision/latest?cb=20250228175140"
+        "Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/a/a0/KC_Caliste_2025_Split_1.png/revision/latest?cb=20250125185631"
     },
     "PCS 2025 Split 1": {
-        "name": "Feng (Chen Chun-Feng)",
+        "name": " HongSuo",
         "stats": {
             "kills": 85,
             "deaths": 19,
             "assists": 93,
             "kda": 9.4
         },
-        "Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/5/57/BYG_Feng_2024_Split_1.png/revision/latest?cb=20240121152242"
+        "Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/a/a2/2022_PSG_Talon_Academy_HongSuo.png/revision/latest?cb=20220321091321"
     },
     "LEC 2025 Winter Playoffs": {
         "name": "Upset",
@@ -30,14 +30,14 @@
         "Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/0/01/FNC_Upset_2025_Split_1.png/revision/latest?cb=20250125185704"
     },
     "LPL 2025 Split 1 Playoffs": {
-        "name": "Knight (Zhuo Ding)",
+        "name": "Peyz",
         "stats": {
             "kills": 68,
             "deaths": 24,
             "assists": 78,
             "kda": 6.1
         },
-        "Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/8/8e/BN_knight_LPL_AS_2024.png/revision/latest?cb=20250215192644"
+        "Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e4/JDG_Peyz_2025_Split_1.png/revision/latest?cb=20250109143802"
     },
     "LCK Cup 2025": {
         "name": "Aiming",
@@ -50,13 +50,13 @@
         "Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/c/cd/BLG_Aiming_2021_Split_1_New.png/revision/latest?cb=20210224041737"
     },
     "LTA 2025 Split 1 Playoffs": {
-        "name": "Yeon (Sean Sung)",
+        "name": "FBI",
         "stats": {
             "kills": 59,
             "deaths": 12,
             "assists": 61,
             "kda": 10.0
         },
-        "Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/4/48/TL_Yeon_2025_Split_1.png/revision/latest?cb=20250311032323"
+        "Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/9/9e/NRG_FBI_2023_Split_2.png/revision/latest?cb=20230624094632"
     }
 }
