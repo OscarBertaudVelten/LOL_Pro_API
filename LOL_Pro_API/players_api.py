@@ -9,6 +9,9 @@ from LOL_Pro_API.teams_api import Team as TeamClass
 
 site = EsportsClient("lol")
 
+class emptyTeam:
+    def __init__(self):
+        self.Name = ""
 
 def decode_soloqueue_ids(soloqueue_ids):
     if not soloqueue_ids:  # Vérifie si c'est None ou vide
@@ -162,6 +165,7 @@ class Player:
             try:
                 self.Team = TeamClass(team_name) if team_name else None
             except Exception as e:
+                self.Team = emptyTeam()
                 print(f"Warning: Failed to initialize Team for player '{self.Player}'. Error: {e}")
 
             self.SoloqueueIds = decode_soloqueue_ids(player_data.get('SoloqueueIds', ""))
