@@ -134,4 +134,4 @@ class Team:
 
 
 if __name__ == "__main__":
-    print(Team("T1"))
+    print(Team("Karmine Corp"))

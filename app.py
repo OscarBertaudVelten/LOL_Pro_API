@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, Response
+from flask import Flask, request, jsonify, Response, send_file
 
 from LOL_Pro_API import players_api, game_scoreboard_api, match_scoreboard_api
 from LOL_Pro_API import teams_api
@@ -60,7 +60,9 @@ def get_last_player_games():
     return jsonify(match_scoreboard_api.get_last_n_matches_of_player(name, nb_games))
 
 
-
+@app.route('/trending_players')
+def return_json_file():
+    return send_file('LOL_Pro_API/scripts/top_players.json', mimetype='application/json')
 
 
 @app.route('/')

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?PowerDesigner signature="Workspace" version="15.1.0.2850"?>
+<!-- Veuillez ne pas modifier ce fichier -->
+
+<Workspace>
+	<Local Expanded="Yes">
+		<Model Expanded="Yes" ID="{0BACEE22-C456-434B-8524-037590BDEDD8}" Name="lol-pro" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" URL="file:///%_HOME%/Power AMC/Projets/lol-pro/lol-pro.prj"/>
+	</Local>
+	<BrowserModule Name="Référentiel"/>
+</Workspace>
