@@ -9,9 +9,6 @@ from LOL_Pro_API.teams_api import Team as TeamClass
 
 site = EsportsClient("lol")
 
-class emptyTeam:
-    def __init__(self):
-        self.Name = ""
 
 def decode_soloqueue_ids(soloqueue_ids):
     if not soloqueue_ids:  # Vérifie si c'est None ou vide
@@ -162,7 +159,7 @@ class Player:
             # Initialisation de l'équipe avec gestion d'erreur
             team_name = player_data.get('Team', "")
             try:
-                self.Team = TeamClass(team_name) if team_name else emptyTeam()
+                self.Team = TeamClass(team_name) if team_name else None
             except Exception as e:
                 print(f"Warning: Failed to initialize Team for player '{self.Player}'. Error: {e}")
 
@@ -175,7 +172,7 @@ class Player:
                              'Vk', 'Website', 'Weibo', 'Youtube']
             self.Socials = {key: player_data[key] for key in social_fields if player_data.get(key)}
 
-            self.Image = images_api.get_player_image_url(player_name)
+            self.Image = images_api.get_image_url_with_player_name(player_name)
 
         else:
             raise ValueError(f"Player with name '{player_name}' not found in the database.")
