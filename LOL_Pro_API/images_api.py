@@ -83,4 +83,4 @@ def get_image_url_with_teamname(team_name: str):
         return ''
 
 if __name__ == "__main__":
-    print(get_image_url_with_player_name("Caliste"))
+    print(get_image_url_with_player_name("665"))
