@@ -1,0 +1,62 @@
+[
+    {
+        "DateTime UTC": "2025-03-16 08:15:00",
+        "DateTime UTC__precision": "0",
+        "MatchId": "2025 First Stand Finals 1",
+        "Team1": "Hanwha Life Esports",
+        "Team1Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e9/Hanwha_Life_Esportslogo_profile.png/revision/latest?cb=20211024143610",
+        "Team1Score": "3",
+        "Team2": "Karmine Corp",
+        "Team2Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/2/2d/Karmine_Corplogo_square.png/revision/latest?cb=20240319113928",
+        "Team2Score": "1",
+        "Tournament": "First Stand 2025"
+    },
+    {
+        "DateTime UTC": "2025-03-15 04:18:00",
+        "DateTime UTC__precision": "0",
+        "MatchId": "2025 First Stand Semifinals 1",
+        "Team1": "Karmine Corp",
+        "Team1Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/2/2d/Karmine_Corplogo_square.png/revision/latest?cb=20240319113928",
+        "Team1Score": "3",
+        "Team2": "CTBC Flying Oyster",
+        "Team2Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/b/bb/CTBC_Flying_Oysterlogo_square.png/revision/latest?cb=20221014011338",
+        "Team2Score": "2",
+        "Tournament": "First Stand 2025"
+    },
+    {
+        "DateTime UTC": "2025-03-13 10:04:00",
+        "DateTime UTC__precision": "0",
+        "MatchId": "2025 First Stand Groups Day 4 2",
+        "Team1": "Hanwha Life Esports",
+        "Team1Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e9/Hanwha_Life_Esportslogo_profile.png/revision/latest?cb=20211024143610",
+        "Team1Score": "2",
+        "Team2": "Karmine Corp",
+        "Team2Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/2/2d/Karmine_Corplogo_square.png/revision/latest?cb=20240319113928",
+        "Team2Score": "1",
+        "Tournament": "First Stand 2025"
+    },
+    {
+        "DateTime UTC": "2025-03-12 09:51:00",
+        "DateTime UTC__precision": "0",
+        "MatchId": "2025 First Stand Groups Day 3 2",
+        "Team1": "Top Esports",
+        "Team1Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/3/35/Top_Esportslogo_profile.png/revision/latest?cb=20210318223317",
+        "Team1Score": "0",
+        "Team2": "Karmine Corp",
+        "Team2Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/2/2d/Karmine_Corplogo_square.png/revision/latest?cb=20240319113928",
+        "Team2Score": "2",
+        "Tournament": "First Stand 2025"
+    },
+    {
+        "DateTime UTC": "2025-03-11 08:15:00",
+        "DateTime UTC__precision": "0",
+        "MatchId": "2025 First Stand Groups Day 2 1",
+        "Team1": "Karmine Corp",
+        "Team1Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/2/2d/Karmine_Corplogo_square.png/revision/latest?cb=20240319113928",
+        "Team1Score": "0",
+        "Team2": "CTBC Flying Oyster",
+        "Team2Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/b/bb/CTBC_Flying_Oysterlogo_square.png/revision/latest?cb=20221014011338",
+        "Team2Score": "2",
+        "Tournament": "First Stand 2025"
+    }
+]

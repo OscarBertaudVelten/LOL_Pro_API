@@ -1,0 +1,45 @@
+{
+    "Age": 28,
+    "Birthdate": "1996-09-21",
+    "Contract": null,
+    "Country": "Denmark",
+    "Deathdate": null,
+    "FavChamps": [
+        "Xayah",
+        "Jhin"
+    ],
+    "ID": "Kobbe",
+    "Image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/4/42/AST_Kobbe_2023_Split_3.png/revision/latest?cb=20231123135817",
+    "IsAutoTeam": true,
+    "IsLowContent": false,
+    "IsLowercase": false,
+    "IsRetired": false,
+    "IsSubstitute": false,
+    "Name": "Kasper Kobberup",
+    "NameFull": "Kasper Kobberup",
+    "Nationality": null,
+    "NationalityPrimary": null,
+    "OverviewPage": "Kobbe",
+    "Player": "Kobbe",
+    "Residency": "EMEA",
+    "ResidencyFormer": "Europe",
+    "Role": "Bot",
+    "RoleLast": "Bot",
+    "Socials": {
+        "Askfm": "KobbeLoL",
+        "Facebook": "https://www.facebook.com/KobbeLoL",
+        "Instagram": "kobbelol",
+        "Lolpros": "https://lolpros.gg/player/kobbe",
+        "Stream": "https://www.twitch.tv/kobbelol",
+        "Twitter": "Kobbe"
+    },
+    "SoloqueueIds": {
+        "EUW": [
+            "Kobbe"
+        ],
+        "NA": [
+            "Carsten Mølby"
+        ]
+    },
+    "Team": null
+}

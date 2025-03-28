@@ -1,27 +1,50 @@
 import functools
 import traceback
+import os
+import json
 from flask import Flask, request, jsonify, Response, send_file
-
-from LOL_Pro_API import players_api, game_scoreboard_api, match_scoreboard_api
-from LOL_Pro_API import teams_api
+from LOL_Pro_API import players_api, game_scoreboard_api, match_scoreboard_api, teams_api
 
 app = Flask(__name__)
 
-def handle_errors(func):
-    @functools.wraps(func)  # Preserve function metadata
-    def wrapper(*args, **kwargs):
-        try:
-            return func(*args, **kwargs)
-        except Exception as e:
-            print(f"Error in {func.__name__}: {str(e)}")  # Log the error
-            traceback.print_exc()  # Print full traceback for debugging
-            if "ratelimited" in str(e):  # Handle rate-limiting errors
-                return Response(status=429)
-            return Response(status=404)
-    return wrapper
+CACHE_DIR = "cache"
+os.makedirs(CACHE_DIR, exist_ok=True)  # Crée le dossier cache s'il n'existe pas
+
+def cache_result(filename):
+    """ Décorateur pour mettre en cache les résultats des requêtes. """
+    def decorator(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            # Utilisation de get() pour éviter les KeyError
+            cache_path = os.path.join(CACHE_DIR, filename.format(
+                name=request.args.get('name', 'unknown'),
+                nb_games=request.args.get('nb_games', '5')  # Valeur par défaut "5"
+            ))
+
+            # Vérifie si un cache existe
+            if os.path.exists(cache_path):
+                with open(cache_path, "r", encoding="utf-8") as file:
+                    return jsonify(json.load(file))
+
+            try:
+                result = func(*args, **kwargs)  # Appelle la fonction si pas de cache
+
+                # Sauvegarde le résultat
+                with open(cache_path, "w", encoding="utf-8") as file:
+                    json.dump(result.json, file, ensure_ascii=False, indent=4)
+
+                return result
+            except Exception as e:
+                print(f"Error in {func.__name__}: {str(e)}")
+                traceback.print_exc()
+                return Response(status=429 if "ratelimited" in str(e) else 404)
+
+        return wrapper
+    return decorator
+
 
 @app.route('/player', methods=['GET'])
-@handle_errors
+@cache_result("player_{name}.json")
 def get_player_info():
     name = request.args.get('name', '')
     player = players_api.Player(name)
@@ -30,14 +53,14 @@ def get_player_info():
     return jsonify(player.__dict__)
 
 @app.route('/team', methods=['GET'])
-@handle_errors
+@cache_result("team_{name}.json")
 def get_team_info():
     name = request.args.get('name', '')
     team = teams_api.Team(name)
     return jsonify(team.__dict__)
 
 @app.route('/game', methods=['GET'])
-@handle_errors
+@cache_result("game_{id}.json")
 def get_game_info():
     game_id = request.args.get('id', '')
     game = game_scoreboard_api.GameScoreboard(game_id)
@@ -46,7 +69,7 @@ def get_game_info():
     return jsonify(game.__dict__)
 
 @app.route('/match', methods=['GET'])
-@handle_errors
+@cache_result("match_{id}.json")
 def get_match_info():
     match_id = request.args.get('id', '')
     match = match_scoreboard_api.MatchScoreboard(match_id)
@@ -57,14 +80,13 @@ def get_match_info():
     return jsonify(match.__dict__)
 
 @app.route('/last_games', methods=['GET'])
-@handle_errors
+@cache_result("last_games_{name}_{nb_games}.json")
 def get_last_player_games():
     name = request.args.get('name', '')
     nb_games = request.args.get('nb_games', 5)
     return jsonify(match_scoreboard_api.get_last_n_matches_of_player(name, nb_games))
 
 @app.route('/trending_players')
-@handle_errors
 def get_trending_players():
     return send_file('LOL_Pro_API/scripts/top_players.json', mimetype='application/json')
 
